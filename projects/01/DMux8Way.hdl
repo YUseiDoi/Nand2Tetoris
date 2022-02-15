@@ -17,4 +17,32 @@ CHIP DMux8Way {
 
     PARTS:
     // Put your code here:
+    DMux(in=in, sel=sel[0], a=outa1, b=outb1);
+    DMux(in=in, sel=sel[0], a=outc1, b=outd1);
+    DMux(in=in, sel=sel[0], a=oute1, b=outf1);
+    DMux(in=in, sel=sel[0], a=outg1, b=outh1);
+    DMux(in=in, sel=sel[1], a=outa2, b=outc2);
+    DMux(in=in, sel=sel[1], a=outb2, b=outd2);
+    DMux(in=in, sel=sel[1], a=oute2, b=outg2);
+    DMux(in=in, sel=sel[1], a=outf2, b=outh2);
+    DMux(in=in, sel=sel[2], a=outa3, b=oute3);
+    DMux(in=in, sel=sel[2], a=outb3, b=outf3);
+    DMux(in=in, sel=sel[2], a=outc3, b=outg3);
+    DMux(in=in, sel=sel[2], a=outd3, b=outh3);
+    And(a=outa1, b=outa2, out=outa4);
+    And(a=outa4, b=outa3, out=a);
+    And(a=outb1, b=outb2, out=outb4);
+    And(a=outb4, b=outb3, out=b);
+    And(a=outc1, b=outc2, out=outc4);
+    And(a=outc4, b=outc3, out=c);
+    And(a=outd1, b=outd2, out=outd4);
+    And(a=outd4, b=outd3, out=d);
+    And(a=oute1, b=oute2, out=oute4);
+    And(a=oute4, b=oute3, out=e);
+    And(a=outf1, b=outf2, out=outf4);
+    And(a=outf4, b=outf3, out=f);
+    And(a=outg1, b=outg2, out=outg4);
+    And(a=outg4, b=outg3, out=g);
+    And(a=outh1, b=outh2, out=outh4);
+    And(a=outh4, b=outh3, out=h);
 }
