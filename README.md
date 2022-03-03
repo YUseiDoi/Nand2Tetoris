@@ -5,3 +5,4 @@
 * day3(2022/02/15): created Mux4Way16, Mux8Way16, DMux4Way, DMux8Way, and finished Chapter 1
 * day4(2022/02/16): read through Chapter 2 and got started with coding
 * day5(2022/02/17): coded but no progress
+* day6(2022/03/03): This is the first time for about 2 weeks because of TOEIC. created HalfAdder

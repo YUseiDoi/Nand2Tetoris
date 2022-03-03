@@ -13,51 +13,80 @@ CHIP Add16 {
     OUT out[16];
 
     PARTS:
-   // Put you code here:
-   Xor(a=a[0], b=b[0], out=out[0]);
-   And(a=a[0], b=b[0], out=outa1);
-   Xor(a=a[1], b=b[1], out=outx1);
-   Xor(a=outa1, b=outx1, out=out[1]);
-   And(a=outa1, b=outx1, out=outa2);
-   Xor(a=a[2], b=b[2], out=outx2);
-   Xor(a=outa2, b=outx2, out=out[2]);
-   And(a=outa2, b=outx2, out=outa3);
-   Xor(a=a[3], b=b[3], out=outx3);
-   Xor(a=outa3, b=outx3, out=out[3]);
-   And(a=outa3, b=outx3, out=outa4);
-   Xor(a=a[4], b=b[4], out=outx4);
-   Xor(a=outa4, b=outx4, out=out[4]);
-   And(a=outa4, b=outx4, out=outa5);
-   Xor(a=a[5], b=b[5], out=outx5);
-   Xor(a=outa5, b=outx5, out=out[5]);
-   And(a=outa5, b=outx5, out=outa6);
-   Xor(a=a[6], b=b[6], out=outx6);
-   Xor(a=outa6, b=outx6, out=out[6]);
-   And(a=outa6, b=outx6, out=outa7);
-   Xor(a=a[7], b=b[7], out=outx7);
-   Xor(a=outa7, b=outx7, out=out[7]);
-   And(a=outa7, b=outx7, out=outa8);
-   Xor(a=a[8], b=b[8], out=outx8);
-   Xor(a=outa8, b=outx8, out=out[8]);
-   And(a=outa8, b=outx8, out=outa9);
-   Xor(a=a[9], b=b[9], out=outx9);
-   Xor(a=outa9, b=outx9, out=out[9]);
-   And(a=outa9, b=outx9, out=outa10);
-   Xor(a=a[10], b=b[10], out=outx10);
-   Xor(a=outa10, b=outx10, out=out[10]);
-   And(a=outa10, b=outx10, out=outa11);
-   Xor(a=a[11], b=b[11], out=outx11);
-   Xor(a=outa11, b=outx11, out=out[11]);
-   And(a=outa11, b=outx11, out=outa12);
-   Xor(a=a[12], b=b[12], out=outx12);
-   Xor(a=outa12, b=outx12, out=out[12]);
-   And(a=outa12, b=outx12, out=outa13);
-   Xor(a=a[13], b=b[13], out=outx13);
-   Xor(a=outa13, b=outx13, out=out[13]);
-   And(a=outa13, b=outx13, out=outa14);
-   Xor(a=a[14], b=b[14], out=outx14);
-   Xor(a=outa14, b=outx14, out=out[14]);
-   And(a=outa14, b=outx14, out=outa15);
-   Xor(a=a[15], b=b[15], out=outx15);
-   Xor(a=outa15, b=outx15, out=out[15]);
+    // Put you code here:
+    Xor(a=a[0], b=b[0], out=out[0]);
+    And(a=a[0], b=b[0], out=outup0);
+
+    Xor(a=a[1], b=b[1], out=outx1);
+    Xor(a=outup0, b=outx1, out=out[1]);
+    And(a=a[1], b=b[1], out=outa1);
+    Or(a=outup0, b=outa1, out=outup1);
+
+    Xor(a=a[2], b=b[2], out=outx2);
+    Xor(a=outup1, b=outx2, out=out[2]);
+    And(a=a[2], b=b[2], out=outa2);
+    Or(a=outa2, b=outup1, out=outup2);
+
+    Xor(a=a[3], b=b[3], out=outx3);
+    Xor(a=outup2, b=outx3, out=out[3]);
+    And(a=a[3], b=b[3], out=outa3);
+    Or(a=outup2, b=outa3, out=outup3);
+
+    Xor(a=a[4], b=b[4], out=outx4);
+    Xor(a=outup3, b=outx4, out=out[4]);
+    And(a=a[4], b=b[4], out=outa4);
+    Or(a=outup3, b=outa4, out=outup4);
+
+    Xor(a=a[5], b=b[5], out=outx5);
+    Xor(a=outup4, b=outx5, out=out[5]);
+    And(a=a[5], b=b[5], out=outa5);
+    Or(a=outup4, b=outa5, out=outup5);
+
+    Xor(a=a[6], b=b[6], out=outx6);
+    Xor(a=outup5, b=outx6, out=out[6]);
+    And(a=a[6], b=b[6], out=outa6);
+    Or(a=outup5, b=outa6, out=outup6);
+
+    Xor(a=a[7], b=b[7], out=outx7);
+    Xor(a=outup6, b=outx7, out=out[7]);
+    And(a=a[7], b=b[7], out=outa7);
+    Or(a=outup6, b=outa7, out=outup7);
+
+    Xor(a=a[8], b=b[8], out=outx8);
+    Xor(a=outup7, b=outx8, out=out[8]);
+    And(a=a[8], b=b[8], out=outa8);
+    Or(a=outup7, b=outa8, out=outup8);
+
+    Xor(a=a[9], b=b[9], out=outx9);
+    Xor(a=outup8, b=outx9, out=out[9]);
+    And(a=a[9], b=b[9], out=outa9);
+    Or(a=outup8, b=outa9, out=outup9);
+
+    Xor(a=a[10], b=b[10], out=outx10);
+    Xor(a=outup9, b=outx10, out=out[10]);
+    And(a=a[10], b=b[10], out=outa10);
+    Or(a=outup9, b=outa10, out=outup10);
+
+    Xor(a=a[11], b=b[11], out=outx11);
+    Xor(a=outup10, b=outx11, out=out[11]);
+    And(a=a[11], b=b[11], out=outa11);
+    Or(a=outup10, b=outa11, out=outup11);
+
+    Xor(a=a[12], b=b[12], out=outx12);
+    Xor(a=outup11, b=outx12, out=out[12]);
+    And(a=a[12], b=b[12], out=outa12);
+    Or(a=outup11, b=outa12, out=outup12);
+    
+    Xor(a=a[13], b=b[13], out=outx13);
+    Xor(a=outup12, b=outx13, out=out[13]);
+    And(a=a[13], b=b[13], out=outa13);
+    Or(a=outup12, b=outa13, out=outup13);
+    
+    Xor(a=a[14], b=b[14], out=outx14);
+    Xor(a=outup13, b=outx14, out=out[14]);
+    And(a=a[14], b=b[14], out=outa14);
+    Or(a=outup13, b=outa14, out=outup14);
+
+    Xor(a=a[15], b=b[15], out=outx15);
+    Xor(a=outup14, b=outx15, out=out[15]);
 }
