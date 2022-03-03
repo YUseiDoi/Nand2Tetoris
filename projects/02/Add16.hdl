@@ -14,79 +14,20 @@ CHIP Add16 {
 
     PARTS:
     // Put you code here:
-    Xor(a=a[0], b=b[0], out=out[0]);
-    And(a=a[0], b=b[0], out=outup0);
-
-    Xor(a=a[1], b=b[1], out=outx1);
-    Xor(a=outup0, b=outx1, out=out[1]);
-    And(a=a[1], b=b[1], out=outa1);
-    Or(a=outup0, b=outa1, out=outup1);
-
-    Xor(a=a[2], b=b[2], out=outx2);
-    Xor(a=outup1, b=outx2, out=out[2]);
-    And(a=a[2], b=b[2], out=outa2);
-    Or(a=outa2, b=outup1, out=outup2);
-
-    Xor(a=a[3], b=b[3], out=outx3);
-    Xor(a=outup2, b=outx3, out=out[3]);
-    And(a=a[3], b=b[3], out=outa3);
-    Or(a=outup2, b=outa3, out=outup3);
-
-    Xor(a=a[4], b=b[4], out=outx4);
-    Xor(a=outup3, b=outx4, out=out[4]);
-    And(a=a[4], b=b[4], out=outa4);
-    Or(a=outup3, b=outa4, out=outup4);
-
-    Xor(a=a[5], b=b[5], out=outx5);
-    Xor(a=outup4, b=outx5, out=out[5]);
-    And(a=a[5], b=b[5], out=outa5);
-    Or(a=outup4, b=outa5, out=outup5);
-
-    Xor(a=a[6], b=b[6], out=outx6);
-    Xor(a=outup5, b=outx6, out=out[6]);
-    And(a=a[6], b=b[6], out=outa6);
-    Or(a=outup5, b=outa6, out=outup6);
-
-    Xor(a=a[7], b=b[7], out=outx7);
-    Xor(a=outup6, b=outx7, out=out[7]);
-    And(a=a[7], b=b[7], out=outa7);
-    Or(a=outup6, b=outa7, out=outup7);
-
-    Xor(a=a[8], b=b[8], out=outx8);
-    Xor(a=outup7, b=outx8, out=out[8]);
-    And(a=a[8], b=b[8], out=outa8);
-    Or(a=outup7, b=outa8, out=outup8);
-
-    Xor(a=a[9], b=b[9], out=outx9);
-    Xor(a=outup8, b=outx9, out=out[9]);
-    And(a=a[9], b=b[9], out=outa9);
-    Or(a=outup8, b=outa9, out=outup9);
-
-    Xor(a=a[10], b=b[10], out=outx10);
-    Xor(a=outup9, b=outx10, out=out[10]);
-    And(a=a[10], b=b[10], out=outa10);
-    Or(a=outup9, b=outa10, out=outup10);
-
-    Xor(a=a[11], b=b[11], out=outx11);
-    Xor(a=outup10, b=outx11, out=out[11]);
-    And(a=a[11], b=b[11], out=outa11);
-    Or(a=outup10, b=outa11, out=outup11);
-
-    Xor(a=a[12], b=b[12], out=outx12);
-    Xor(a=outup11, b=outx12, out=out[12]);
-    And(a=a[12], b=b[12], out=outa12);
-    Or(a=outup11, b=outa12, out=outup12);
-    
-    Xor(a=a[13], b=b[13], out=outx13);
-    Xor(a=outup12, b=outx13, out=out[13]);
-    And(a=a[13], b=b[13], out=outa13);
-    Or(a=outup12, b=outa13, out=outup13);
-    
-    Xor(a=a[14], b=b[14], out=outx14);
-    Xor(a=outup13, b=outx14, out=out[14]);
-    And(a=a[14], b=b[14], out=outa14);
-    Or(a=outup13, b=outa14, out=outup14);
-
-    Xor(a=a[15], b=b[15], out=outx15);
-    Xor(a=outup14, b=outx15, out=out[15]);
+    HalfAdder(a=a[0], b=b[0], sum=out[0], carry=outup0);
+    FullAdder(a=a[1], b=b[1], c=outup0, sum=out[1], carry=outup1);
+    FullAdder(a=a[2], b=b[2], c=outup1, sum=out[2], carry=outup2);
+    FullAdder(a=a[3], b=b[3], c=outup2, sum=out[3], carry=outup3);
+    FullAdder(a=a[4], b=b[4], c=outup3, sum=out[4], carry=outup4);
+    FullAdder(a=a[5], b=b[5], c=outup4, sum=out[5], carry=outup5);
+    FullAdder(a=a[6], b=b[6], c=outup5, sum=out[6], carry=outup6);
+    FullAdder(a=a[7], b=b[7], c=outup6, sum=out[7], carry=outup7);
+    FullAdder(a=a[8], b=b[8], c=outup7, sum=out[8], carry=outup8);
+    FullAdder(a=a[9], b=b[9], c=outup8, sum=out[9], carry=outup9);
+    FullAdder(a=a[10], b=b[10], c=outup9, sum=out[10], carry=outup10);
+    FullAdder(a=a[11], b=b[11], c=outup10, sum=out[11], carry=outup11);
+    FullAdder(a=a[12], b=b[12], c=outup11, sum=out[12], carry=outup12);
+    FullAdder(a=a[13], b=b[13], c=outup12, sum=out[13], carry=outup13);
+    FullAdder(a=a[14], b=b[14], c=outup13, sum=out[14], carry=outup14);
+    FullAdder(a=a[15], b=b[15], c=outup14, sum=out[15], carry=outcarry);
 }
