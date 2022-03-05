@@ -7,3 +7,4 @@
 * day5(2022/02/17): coded but no progress
 * day6(2022/03/03): This is the first time for about 2 weeks because of TOEIC. created HalfAdder, FulAdder, Add16
                     I found that it's important to follow the textbook carefully.
+* day7(2022/03/05): created Inc16 and ALU halfway
