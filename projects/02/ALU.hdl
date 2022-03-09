@@ -56,5 +56,21 @@ CHIP ALU {
     Mux16(a=outoandy, b=outorxy, sel=f, out=outmuxf);
     Not16(in=outmuxf, out=outnotout);
     Mux16(a=outmuxf, b=outnotout, sel=no, out=outmuxno);
-    And(a=outmuxno[15], b=outmuxno[15], out=ng);
+    And(a=outmuxno[0], b=outmuxno[0], out=ng);
+    Or(a=outmuxno[0], b=outmuxno[1], out=outmuxnoor1);
+    Or(a=outmuxnoor1, b=outmuxno[2], out=outmuxnoor2);
+    Or(a=outmuxnoor2, b=outmuxno[3], out=outmuxnoor3);
+    Or(a=outmuxnoor3, b=outmuxno[4], out=outmuxnoor4);
+    Or(a=outmuxnoor4, b=outmuxno[5], out=outmuxnoor5);
+    Or(a=outmuxnoor5, b=outmuxno[6], out=outmuxnoor6);
+    Or(a=outmuxnoor6, b=outmuxno[7], out=outmuxnoor7);
+    Or(a=outmuxnoor7, b=outmuxno[8], out=outmuxnoor8);
+    Or(a=outmuxnoor8, b=outmuxno[9], out=outmuxnoor9);
+    Or(a=outmuxnoor9, b=outmuxno[10], out=outmuxnoor10);
+    Or(a=outmuxnoor10, b=outmuxno[11], out=outmuxnoor11);
+    Or(a=outmuxnoor11, b=outmuxno[12], out=outmuxnoor12);
+    Or(a=outmuxnoor12, b=outmuxno[13], out=outmuxnoor13);
+    Or(a=outmuxnoor13, b=outmuxno[14], out=outmuxnoor14);
+    Or(a=outmuxnoor14, b=outmuxno[15], out=zr);
+    And16(a=outmuxno, b=outmuxno, out=out);
 }
