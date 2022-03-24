@@ -9,3 +9,4 @@
                     I found that it's important to follow the textbook carefully.
 * day7(2022/03/05): created Inc16 and ALU halfway
 * day8(2022/03/09): tried to create ALU but it's still halfway. I found that true and false can be used in HDL.
+* day9(2022/03/23): created ALU and the Chapter-2 has done. then next, go to the Chapter-3 and created Bit, Register, RAM8

@@ -16,4 +16,20 @@ CHIP RAM64 {
 
     PARTS:
     // Put your code here:
+    And(a=address[0], b=address[0], out=address0);
+    And(a=address[1], b=address[1], out=address1);
+    And(a=address[2], b=address[2], out=address2);
+    And(a=address[3], b=address[3], out=address3);
+    And(a=address[4], b=address[4], out=address4);
+    And(a=address[5], b=address[5], out=address5);
+    DMux8Way(in=load, sel[0]=address3, sel[1]=address4, sel[2]=address5, a=outdmux0, b=outdmux1, c=outdmux2, d=outdmux3, e=outdmux4, f=outdmux5, g=outdmux6, h=outdmux7);
+    RAM8(in=in, load=outdmux0, address[0]=address2, address[1]=address1, address[2]=address0, out=outram0);
+    RAM8(in=in, load=outdmux1, address[0]=address2, address[1]=address1, address[2]=address0, out=outram1);
+    RAM8(in=in, load=outdmux2, address[0]=address2, address[1]=address1, address[2]=address0, out=outram2);
+    RAM8(in=in, load=outdmux3, address[0]=address2, address[1]=address1, address[2]=address0, out=outram3);
+    RAM8(in=in, load=outdmux4, address[0]=address2, address[1]=address1, address[2]=address0, out=outram4);
+    RAM8(in=in, load=outdmux5, address[0]=address2, address[1]=address1, address[2]=address0, out=outram5);
+    RAM8(in=in, load=outdmux6, address[0]=address2, address[1]=address1, address[2]=address0, out=outram6);
+    RAM8(in=in, load=outdmux7, address[0]=address2, address[1]=address1, address[2]=address0, out=outram7);
+    Mux8Way16(a=outram0, b=outram1, c=outram2, d=outram3, e=outram4, f=outram5, g=outram6, h=outram7, sel[0]=address2, sel[1]=address1, sel[2]=address0, out=out);
 }
