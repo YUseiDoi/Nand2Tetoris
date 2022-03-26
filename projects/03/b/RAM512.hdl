@@ -16,4 +16,14 @@ CHIP RAM512 {
 
     PARTS:
     // Put your code here:
+    DMux8Way(in=load, sel[0]=address[6], sel[1]=address[7], sel[2]=address[8], a=outdmux0, b=outdmux1, c=outdmux2, d=outdmux3, e=outdmux4, f=outdmux5, g=outdmux6, h=outdmux7);
+    RAM64(in=in, load=outdmux0, address[0]=address[0], address[1]=address[1], address[2]=address[2], address[3]=address[3], address[4]=address[4], address[5]=address[5], out=outram0);
+    RAM64(in=in, load=outdmux1, address[0]=address[0], address[1]=address[1], address[2]=address[2], address[3]=address[3], address[4]=address[4], address[5]=address[5], out=outram1);
+    RAM64(in=in, load=outdmux2, address[0]=address[0], address[1]=address[1], address[2]=address[2], address[3]=address[3], address[4]=address[4], address[5]=address[5], out=outram2);
+    RAM64(in=in, load=outdmux3, address[0]=address[0], address[1]=address[1], address[2]=address[2], address[3]=address[3], address[4]=address[4], address[5]=address[5], out=outram3);
+    RAM64(in=in, load=outdmux4, address[0]=address[0], address[1]=address[1], address[2]=address[2], address[3]=address[3], address[4]=address[4], address[5]=address[5], out=outram4);
+    RAM64(in=in, load=outdmux5, address[0]=address[0], address[1]=address[1], address[2]=address[2], address[3]=address[3], address[4]=address[4], address[5]=address[5], out=outram5);
+    RAM64(in=in, load=outdmux6, address[0]=address[0], address[1]=address[1], address[2]=address[2], address[3]=address[3], address[4]=address[4], address[5]=address[5], out=outram6);
+    RAM64(in=in, load=outdmux7, address[0]=address[0], address[1]=address[1], address[2]=address[2], address[3]=address[3], address[4]=address[4], address[5]=address[5], out=outram7);
+    Mux8Way16(a=outram0, b=outram1, c=outram2, d=outram3, e=outram4, f=outram5, g=outram6, h=outram7, sel[0]=address[6], sel[1]=address[7], sel[2]=address[8], out=out);
 }

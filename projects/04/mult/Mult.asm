@@ -10,3 +10,23 @@
 // R0 >= 0, R1 >= 0, and R0*R1 < 32768.
 
 // Put your code here.
+    @i
+    M=1
+(LOOP)
+    @i
+    D=M         // D=i
+    @R1
+    D=D-M       // D=i-R1
+    @END
+    D;JGT       // if D(i-R1)>0, then go to end
+    @R0
+    D=M         // D=R0
+    @R2
+    M=M+D       // R2=R2+R0
+    @i
+    M=M+1       // i=i+1
+    @LOOP
+    0;JMP       // jump to the start
+(END)
+    @END
+    0;JMP
