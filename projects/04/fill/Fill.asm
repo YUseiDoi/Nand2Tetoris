@@ -12,46 +12,39 @@
 // the screen should remain fully clear as long as no key is pressed.
 
 // Put your code here.
-    @SCREEN
+    @24576      // address of keyboard
     D=A
-    @0
+    @keyboard
     M=D
-    @i
-    M=0
-    @screen
-    M=0
-(LOOP)
-    @KBD
-    D=M
-    @BLACK
-    D;JGT       // if keyboard is pressed, jump to BLACK
-(WHITE)
-    @screen
-    M=0
-    @CHANGE
-    0;JMP
-(BLACK)
-    @screen
+(CHECK_KEYBOARD)
+    @24575
+    D=A
+    @current
+    M=D
+    @keyboard
+    A=M
+    D=M         // check if keyboard is pressed
+    @fillvalue
     M=-1
-    @CHANGE
-    0;JMP
-(CHANGE)
-    @1
+    @DRAW
+    D;JNE       // if keyboard is pressed, jump to DRAW
+    @fillvalue
+    M=0
+(DRAW)
+    @fillvalue
     D=M
-    @0
+    @current
     A=M
     M=D
-    @0
-    M=M+1
-    @i
-    M=M+1
-    @252
-    D=A
-    @i
-    D=M-D
-    @END
-    D;JGE
-    @LOOP
+    @current
+    D=M
+    @16384
+    D=D-A
+    @CHECK_KEYBOARD
+    D;JLE
+    @current
+    M=M-1
+    @DRAW
     0;JMP
 (END)
     @END
