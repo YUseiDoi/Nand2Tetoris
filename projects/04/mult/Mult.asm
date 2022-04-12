@@ -12,6 +12,8 @@
 // Put your code here.
     @i
     M=1
+    @R2
+    M=0
 (LOOP)
     @i
     D=M         // D=i

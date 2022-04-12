@@ -11,3 +11,4 @@
 * day8(2022/03/09):  tried to create ALU but it's still halfway. I found that true and false can be used in HDL.
 * day9(2022/03/23):  created ALU and the Chapter-2 has done. then next, go to the Chapter-3 and created Bit, Register, RAM8
 * day10(2022/03/26): created RAM64, PC, RAM512, RAM4K, RAM16K, and finished Chapter-3. then moved to Chapter-4.
+* day11(2022/03/30): created Mult

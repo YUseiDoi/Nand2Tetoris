@@ -12,3 +12,47 @@
 // the screen should remain fully clear as long as no key is pressed.
 
 // Put your code here.
+    @SCREEN
+    D=A
+    @0
+    M=D
+    @i
+    M=0
+    @screen
+    M=0
+(LOOP)
+    @KBD
+    D=M
+    @BLACK
+    D;JGT       // if keyboard is pressed, jump to BLACK
+(WHITE)
+    @screen
+    M=0
+    @CHANGE
+    0;JMP
+(BLACK)
+    @screen
+    M=-1
+    @CHANGE
+    0;JMP
+(CHANGE)
+    @1
+    D=M
+    @0
+    A=M
+    M=D
+    @0
+    M=M+1
+    @i
+    M=M+1
+    @252
+    D=A
+    @i
+    D=M-D
+    @END
+    D;JGE
+    @LOOP
+    0;JMP
+(END)
+    @END
+    0;JMP
