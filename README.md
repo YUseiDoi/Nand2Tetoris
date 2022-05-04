@@ -13,3 +13,4 @@
 * day10(2022/03/26): created RAM64, PC, RAM512, RAM4K, RAM16K, and finished Chapter-3. then moved to Chapter-4.
 * day11(2022/03/30): created Mult.
 * day12(2022/04/12): created Fill, and the Chapter-4 has done.
+* day13(2022/05/04): read the Chapter-5 and summarized it in Notion, and started creating Memory first of all.
