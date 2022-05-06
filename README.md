@@ -15,3 +15,4 @@
 * day12(2022/04/12): created Fill, and the Chapter-4 has done.
 * day13(2022/05/04): read the Chapter-5 and summarized it in Notion, and started creating Memory first of all.
 * day14(2022/05/05): created Memory, but it's still halfway.
+* day15(2022/05/06): realised that I misunderstood the index of array in HDL..
