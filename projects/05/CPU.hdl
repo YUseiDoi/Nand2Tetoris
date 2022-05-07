@@ -40,4 +40,6 @@ CHIP CPU {
 
     PARTS:
     // Put your code here:
+    ALU(x=, y=, zx=, nx=, zy=, ny=, f=, no=, out=, zr=, ng=);
 }
+// instructionを分割してALUに入れる？
